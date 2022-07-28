@@ -9,7 +9,7 @@ var delay = (seconds, callback) => {
     }
 }
 
-delay(2, (error, message) => {
+delay(4, (error, message) => {
     if (error) {
         console.log(error.message);
     } else {

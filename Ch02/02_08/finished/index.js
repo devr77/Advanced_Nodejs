@@ -1,5 +1,7 @@
 const { Transform } = require('stream');
 
+// Transform type of stream are of special type of duplex stream
+
 class ReplaceText extends Transform {
 
   constructor(char) {
@@ -26,3 +28,6 @@ var xStream = new ReplaceText('XX');
 process.stdin
   .pipe(xStream)
   .pipe(process.stdout);
+
+
+// Zlib to compress stream and crypto to encrypt the stream(transform Stream)

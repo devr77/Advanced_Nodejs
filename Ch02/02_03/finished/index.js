@@ -1,6 +1,7 @@
 const fs = require('fs');
 
-const readStream = fs.createReadStream('../../powder-day.mp4');
+
+const readStream = fs.createReadStream('./powder-day.mp4');
 
 readStream.on('data', (chunk) => {
   console.log('size: ', chunk.length)
@@ -15,9 +16,19 @@ readStream.on('error', (error) => {
   console.error(error);
 });
 
-readStream.pause();
+// Making in non flowing mode
+readStream.pause();  
+
+// Asking one bit of a video == Making non Flowing mode
+// process.stdin.on('data', (chunk) => {
+//   readStream.read();
+// });
+
+// Non flowing mode vs Flowing mode 
+
+
 process.stdin.on('data', (chunk) => {
-    if (chunk.toString().trim() === 'finish') {
+    if (chunk.toString().trim() === 'finish') {     // If you type finish stream in finished
         readStream.resume();
     }
     readStream.read();

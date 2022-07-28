@@ -12,7 +12,7 @@ createServer(async (req, res) => {
     start = parseInt(start, 10);
     end = end ? parseInt(end, 10) : size - 1;
     res.writeHead(206, {
-       'Content-Range': `bytes ${start}-${end}/${size}`,
+       'Content-Range': `bytes ${start}-${end}/${size}`, // Byte of size of data sending to browser in chunk
        'Accept-Ranges': 'bytes',
        'Content-Length': (end-start) + 1,
        'Content-Type': 'video/mp4'

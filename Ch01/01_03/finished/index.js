@@ -6,13 +6,13 @@ var delay = (seconds) => new Promise((resolves, rejects) => {
 
     setTimeout(() => {
         resolves('the long delay has ended')
-    }, time);
+    }, seconds);
 });
 
 delay(1)
   .then(console.log)
   .then(() => 42)
-  .then((number) => console.log('Hello world: ${number}'))
+  .then((number) => console.log(`Hello world: ${number}`))
   .catch((error) => console.log(`error: ${error.message}`));
 
 console.log('end first tick');

@@ -1,7 +1,7 @@
 const { createServer } = require('http');
 const { stat, createReadStream } = require('fs');
 const { promisify } = require('util');
-const fileName = '../../powder-day.mp4';
+const fileName = './powder-day.mp4';
 const fileInfo = promisify(stat);
 
 createServer(async (req, res) => {

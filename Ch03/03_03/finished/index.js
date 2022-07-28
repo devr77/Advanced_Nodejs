@@ -5,7 +5,7 @@ const {
   createWriteStream 
 } = require('fs');
 const { promisify } = require('util');
-const fileName = '../../powder-day.mp4';
+const fileName = './powder-day.mp4';
 const fileInfo = promisify(stat);
 
 const respondWithVideo = async (req, res) => {

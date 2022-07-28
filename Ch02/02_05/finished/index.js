@@ -1,8 +1,12 @@
 const { createReadStream, createWriteStream } = require('fs');
 
-const readStream = createReadStream('../../powder-day.mp4');
+// Manual Pipeline
+// Handling stream when it flow at higher rate == BAckpressure
+
+const readStream = createReadStream('./powder-day.mp4');
 const writeStream = createWriteStream('./copy.mp4', {
-   //highWaterMark: 1628920128
+    // Controlling how much data can be following through the stream
+    // highWaterMark: 1628920
 });
 
 readStream.on('data', (chunk) => {
